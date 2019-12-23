@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+        "-//Apache Software Foundation//DTD Struts Configuration 2.1//EN"
+        "http://struts.apache.org/dtds/struts-2.1.dtd">
+
+<struts>
+
+    <constant name="struts.i18n.reload" value="false"/>
+    <constant name="struts.devMode" value="true"/>
+
+    <include file="struts-default.xml"/>
+
+    <package name="mydefault" extends="struts-default" >
+        <action name="login" class="com.carson.demo.action.UserAction" method="login">
+            <result name="success">index.jsp</result>
+            <result name="login">login.jsp</result>
+        </action>
+
+
+<!--        <action name="index" class="com.carson.demo.action.UserAction" method="index">-->
+<!--            <result name="success">index.jsp</result>-->
+<!--        </action>-->
+
+        <action name="xslt" class="com.carson.demo.action.XSLTAction" method="xslt">
+            <result name="success" type="xslt">
+                <param name="stylesheetLocation">/default.xsl</param>
+            </result>
+        </action>
+
+    </package>
+
+</struts>
