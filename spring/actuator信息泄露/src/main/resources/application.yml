@@ -1,0 +1,20 @@
+server:
+  port: 8888
+info:
+  head: head
+  body: body
+
+endpoint:
+management:
+  endpoints:
+    web:
+      exposure:
+        #加载所有的端点，默认只加载了info、health
+        include: '*'
+  endpoint:
+    health:
+      show-details: always
+    #可以关闭指定的端点
+    shutdown:
+      enabled: true
+
